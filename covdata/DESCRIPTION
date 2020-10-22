@@ -1,5 +1,5 @@
 Package: covda
-Title: The Data About Cov_19
+Title: Analyze Cases With Countries In Cov19
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Linling",
@@ -7,12 +7,14 @@ Authors@R:
            role = c("aut", "cre"),
            email = "353621303@qq.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Analyze cases from various countries in Cov-19
-License: GPL-3
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/etc5523-2020/r-package-assessment-AntiRosa
-
 BugReports: https://github.com/etc5523-2020/r-package-assessment-AntiRosa/issues
+Depens:
+   R(>=2,10)
