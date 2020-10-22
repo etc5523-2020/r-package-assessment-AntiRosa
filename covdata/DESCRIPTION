@@ -14,8 +14,8 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-URL: https://github.com/etc5523-2020/r-package-assessment-AntiRosa
-BugReports: https://github.com/etc5523-2020/r-package-assessment-AntiRosa/issues
+URL: https://github.com/etc5523-2020/r-package-assessment-AntiRosa/tree/master/covdata
+BugReports: https://github.com/etc5523-2020/r-package-assessment-AntiRosa/tree/master/covdata/issues
 Depends: 
     R (>= 2.10)
 Imports: 
