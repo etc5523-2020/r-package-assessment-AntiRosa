@@ -1,0 +1,163 @@
+---
+title: 'ETC5523: Communicating with Data'
+subtitle: "Tutorial 7"
+author: "Stuart Lee"
+date: "Week 7"
+output: 
+  html_document:
+    toc: true
+    css: "tutorial-style.css"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+**<span style="color:red">Please do [Preparation](#preparation) *before* the tutorial!</span>**
+
+## `r emo::ji("target")` Objectives
+
+* learn to make a simple R package as a container for data 
+* practice writing documentation with `roxygen2`
+
+## `r emo::ji("wrench")` Preparation  
+
+  
+1. Install R-packages
+```{r}
+install.packages(c("devtools", "usethis", "roxygen2"))
+```
+
+2. Take a skim of [Chapter 12 - External Data](https://r-pkgs.org/data.html) from the *R Packages* book.
+
+    
+##  Exercise 7A
+
+Use the `usethis` package to create a new package called `cwdata`
+
+```{r}
+library(usethis)
+create_package("cwdata")
+```
+
+**Edit the DESCRIPTION file** created and modify the `Authors@R` tag to include 
+yourself as the creator and author of the package. 
+
+Add version control to your package and upload your package to your Github.
+
+##  Exercise 7B
+
+Use the `usethis` package to create an R script called "key_crop_yields.R" in the  "data-raw" directory in your packages folder. 
+
+```{r}
+use_data_raw(name = "key_crop_yields")
+```
+
+The `data-raw` directory is used to hold scripts that generate package data.
+The data we will use in this package will be a tidied version of the
+Global Crop Yields data you used in tutorial 6. 
+
+A reminder:
+
+> The data below comes from [Our World in Data](https://ourworldindata.org/crop-yields) and sourced from [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-01/readme.md). This data contains agricultural yields across crop types and by country from 1960 onwards. 
+
+**Edit the script** to process the data into a long form tidy representation. Here's some code to get you started:
+
+```{r data-raw}
+library(readr)
+library(janitor)
+library(tidyr)
+library(magrittr)
+url <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv'
+
+key_crop_yields <- read_csv(url) %>% 
+  clean_names() %>% 
+  pivot_longer(
+    cols = -___,
+    names_to = "crop", 
+    values_to = "tonnes_per_hectare",
+    names_pattern = "([^_]+)"
+  )
+
+---
+```
+
+After you've finished writing your script make sure you've run it.
+
+You should now have a folder called "data" in your package,
+with a file called "key_crop_yields.rda".
+
+
+## Exercise 7C 
+
+We now need to create an R script that lives in the "R" directory
+that documents our data object `key_crop_yields`.
+
+```{r}
+use_r("key_crop_yields.R")
+```
+
+Modify the script and **document the data.**
+
+ - Describe the number of rows and columns 
+ - Type of object `key_crop_yields` is. 
+ - What are the types of the columns?
+ - What do the columns mean?
+ - Where did you find it? 
+
+It is possible to use ordinary markdown syntax in documenation with `roxygen2` by running (in fact this is set by default if you used `usethis::create_package()`) 
+
+```{r}
+use_roxygen_md()
+```
+
+If you get stuck, take a look at [section 12.1.1 of R packages](https://r-pkgs.org/data.html) for guidance.
+
+Once you've finished modifying run
+
+```{r}
+devtools::document()
+```
+
+at the console to build your package documentation.
+
+## Exercise 7D
+
+We now have a minimally working package that contains some data. 
+Restart your R session and then run 
+
+```{r}
+devtools::load_all()
+```
+
+Now the `key_crop_yields` data is your available to your R session.
+
+**Edit your DESCRIPTION file** to have a more appropriate title and description and version number. 
+
+After you've finished editing run:
+```{r}
+devtools::check()
+```
+
+**Do you get any errors or warnings?**
+
+**Is there any other way you can use Rstudio to perform a check?**
+
+Once you have passed the check, install the package locally:
+
+```{r}
+devtools::install()
+```
+
+Restart your R session and try loading your package. Check out the help page for the data.
+
+```{r}
+library(cwdata)
+?key_crop_yields
+```
+
+Remember to track and push the changes you've made to package to your github.
+
+# Exercise 7E (Bonus)
+
+Practice writing and documenting some R functions.

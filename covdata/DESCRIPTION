@@ -1,5 +1,5 @@
 Package: covda
-Title: What the Package Does (One Line, Title Case)
+Title: The Data About Cov_19
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Linling",
@@ -7,9 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "353621303@qq.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: Analyze cases from various countries in Cov-19
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
