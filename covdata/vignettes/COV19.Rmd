@@ -6,6 +6,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+This package is used to fund the infection/death/recover data of countries in the COV-19
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -16,4 +17,11 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(covda)
+key_crop_yields
+library(ggplot2)
+library(dplyr)
+key_crop_yields %>%
+filter(entity == "Australia")
 ```
+
+
