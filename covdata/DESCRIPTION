@@ -24,5 +24,6 @@ Suggests:
     knitr,
     rmarkdown,
     ggplot2,
-    tidycovid19
+    tidycovid19,
+    testthat
 VignetteBuilder: knitr

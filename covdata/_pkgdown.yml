@@ -2,11 +2,11 @@ template:
   params:
     bootswatch: cerulean
 
-navbar :
- structure:
-  right: [extensions, github]
-components:
- home: ~
- extensions:
-  text: about
-  href: https://kiryulyn.netlify.app/index.html
+navbar:
+  structure:
+    right: [help, github]
+  components:
+    home: ~
+    help:
+      text: about
+      href: articles/COV19.html
