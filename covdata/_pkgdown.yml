@@ -1,0 +1,19 @@
+template:
+  params:
+    bootswatch: cerulean
+output_dir: "docs"
+navbar:
+   title: "COV19"
+   left:
+     - text: "About blog"
+       href: index.html
+     - text: "Compare Austria with the world"
+       href: post1.html
+     - text: "Table for confirmed in Poland"
+       href: post2.html
+     - text: "Table for death in Poland"
+       href: post3.html
+     - text: "Self-reflection"
+       href: post4.html
+output:
+html_document:
