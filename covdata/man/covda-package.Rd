@@ -6,7 +6,7 @@
 \alias{covda-package}
 \title{covda: Analyze Cases With Countries In Cov19}
 \description{
-Analyze Cases With Countries In Cov19.
+Analyze Cases With Countries In Cov19
 }
 \seealso{
 Useful links:
