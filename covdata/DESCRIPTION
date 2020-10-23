@@ -16,7 +16,16 @@ RoxygenNote: 7.1.1
 URL: https://github.com/etc5523-2020/r-package-assessment-AntiRosa
 BugReports: https://github.com/etc5523-2020/r-package-assessment-AntiRosa/issues
 Depends: 
-    R (>= 2.10)
-Imports: 
-    tibble,
+    R (>= 2.10),
     coronavirus
+Imports: 
+    tibble
+Suggests: 
+    knitr,
+    rmarkdown,
+    ggplot2
+    tidycovid19
+VignetteBuilder: knitr
+Remotes:
+joachim-gassen/tidycovid19,
+nset-ornl/wbstats
