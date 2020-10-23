@@ -3,17 +3,10 @@ template:
     bootswatch: cerulean
 
 navbar :
-
-structure:
-
-right: [extensions, github]
-
+ structure:
+  right: [extensions, github]
 components:
-
-home: ~
-
-extensions:
-
-text: about
-
-href: https://kiryulyn.netlify.app/index.html
+ home: ~
+ extensions:
+  text: about
+  href: https://kiryulyn.netlify.app/index.html
