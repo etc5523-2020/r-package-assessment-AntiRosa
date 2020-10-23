@@ -23,9 +23,6 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    ggplot2
+    ggplot2,
     tidycovid19
 VignetteBuilder: knitr
-Remotes:
-joachim-gassen/tidycovid19,
-nset-ornl/wbstats
