@@ -6,7 +6,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-This package is used to fund the infection/death/recover data of countries in the COV-19
+This package is used to fund the data of countries 
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

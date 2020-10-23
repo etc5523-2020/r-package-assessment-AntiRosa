@@ -1,5 +1,5 @@
 Package: covda
-Title: Analyze Cases With Countries In Cov19
+Title: Analyze Cases With Countries
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Linling",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "353621303@qq.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Simple statistics collate some data from the countries
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
